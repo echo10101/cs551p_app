@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
 {% block title %}Tournaments{% endblock %}
 {% block content %}
-<h1>All Tournaments</h1>
-<ul>
+
+<h1 class="mb-4">Tournaments</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
   {% for t in tournaments %}
-    <li><a href="{{ url_for('tournaments.tournament_detail', id=t.id) }}">{{ t.name }}</a></li>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ t.name }}</h5>
+          <p class="card-text text-muted">Matches: {{ t.matches|length }}</p>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <a href="{{ url_for('tournaments.tournament_detail', id=t.id) }}"
+             class="btn btn-primary w-100">
+            Details
+          </a>
+        </div>
+      </div>
+    </div>
   {% endfor %}
-</ul>
+</div>
+
 {% endblock %}

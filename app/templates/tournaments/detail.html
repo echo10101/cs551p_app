@@ -1,11 +1,42 @@
 {% extends 'base.html' %}
-{% block title %}Tournament Details{% endblock %}
+{% block title %}{{ tournament.name }}{% endblock %}
 {% block content %}
-<h1>{{ tournament.name }}</h1>
-<h2>Matches</h2>
-<ul>
-  {% for m in matches %}
-    <li>{{ m.home_team }} vs {{ m.away_team }} - <a href="{{ url_for('matches.match_detail', id=m.id) }}">Details</a></li>
-  {% endfor %}
-</ul>
+
+<h1 class="mb-3">{{ tournament.name }}</h1>
+<p class="text-secondary mb-4">Total matches: {{ matches|length }}</p>
+
+<div class="table-responsive">
+  <table class="table table-hover shadow-sm bg-white rounded">
+    <thead class="table-light">
+      <tr>
+        <th>#</th>
+        <th>Home</th>
+        <th>Away</th>
+        <th>Score</th>
+        <th>Date</th>
+        <th>Country</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in matches %}
+        <tr>
+          <td>{{ m.id }}</td>
+          <td>{{ m.home_team }}</td>
+          <td>{{ m.away_team }}</td>
+          <td>{{ m.home_score }}–{{ m.away_score }}</td>
+          <td>{{ m.date }}</td>
+          <td>{{ m.match_country }}</td>
+          <td>
+            <a href="{{ url_for('matches.match_detail', id=m.id) }}"
+               class="btn btn-sm btn-outline-secondary">
+              View
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
 {% endblock %}
