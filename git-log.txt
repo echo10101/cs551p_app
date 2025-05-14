@@ -1,0 +1,5 @@
+* e7b42c1: Add pytest tests and chart table
+* d4c31a0: Implement match search feature
+* b9af913: Introduce Flask blueprints
+* a728cf2: Define data models for Tournament, Match, GoalScorer
+* 84dc2e0: Initial project setup

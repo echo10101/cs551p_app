@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Tournaments{% endblock %}
+{% block content %}
+<h1>All Tournaments</h1>
+<ul>
+  {% for t in tournaments %}
+    <li><a href="{{ url_for('tournaments.tournament_detail', id=t.id) }}">{{ t.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

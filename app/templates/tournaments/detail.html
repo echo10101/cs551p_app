@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Tournament Details{% endblock %}
+{% block content %}
+<h1>{{ tournament.name }}</h1>
+<h2>Matches</h2>
+<ul>
+  {% for m in matches %}
+    <li>{{ m.home_team }} vs {{ m.away_team }} - <a href="{{ url_for('matches.match_detail', id=m.id) }}">Details</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

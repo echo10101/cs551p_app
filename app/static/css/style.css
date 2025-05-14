@@ -1,0 +1,84 @@
+body {
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.navbar {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.container .bg-light.p-5 {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transition: background-color 0.2s;
+}
+.btn-primary:hover {
+  background-color: #004494;
+  border-color: #004494;
+}
+
+.btn-outline-primary {
+  color: #0056b3;
+  border-color: #0056b3;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-outline-primary:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.table {
+  background: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.table thead {
+  background-color: #0056b3;
+  color: #fff;
+}
+.table tbody tr:hover {
+  background-color: rgba(0, 86, 179, 0.05);
+}
+
+form.row.g-2 input.form-control {
+  border-radius: 0.5rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+footer {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+

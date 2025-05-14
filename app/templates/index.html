@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Welcome to the Football Database</h1>
+<p><a href="{{ url_for('tournaments.list_tournaments') }}">View all tournaments</a></p>
+<p><a href="{{ url_for('matches.list_matches') }}">View all matches</a></p>
+<ul>
+  {% for t in tournaments %}
+    <li><a href="{{ url_for('tournaments.tournament_detail', id=t.id) }}">{{ t.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
